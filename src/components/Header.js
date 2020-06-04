@@ -9,12 +9,12 @@ const Header = () => {
     <div className="header">
       <div>
         <Link to="/">
-          <h1>My Store</h1>
+          <h1>Keranjang Belanja</h1>
         </Link>
       </div>
       <div>
         <Link className="ui button primary" to="cart">
-          Cart: {totalQty}
+          Keranjang: {totalQty}
         </Link>
       </div>
     </div>
