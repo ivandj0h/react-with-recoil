@@ -1,24 +1,22 @@
-import React from 'react';
+import React from "react";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import Catalog from "./Catalog";
+import Cart from "./Cart";
+import Header from "./Header";
+import { RecoilRoot } from "recoil";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RecoilRoot>
+      <Router basename="/">
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Catalog} />
+          <Route path="/cart" component={Cart} />
+        </Switch>
+      </Router>
+    </RecoilRoot>
   );
-}
+};
 
 export default App;
